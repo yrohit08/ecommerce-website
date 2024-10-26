@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+#root {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%; 
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card img {
+  height: 200px;
+  object-fit: cover;
+}
+.navbar {
+  background-color: #007BFF; /* Similar to Walmart's blue */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 16;
+}
+
+.form-inline .form-control {
+  width: 80%;
+}
+.navbar .fa {
+  color: white;
+}
+.btn-outline-light {
+  border-color: white;
+}
+.not-found-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

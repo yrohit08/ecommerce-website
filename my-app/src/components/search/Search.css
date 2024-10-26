@@ -1,0 +1,30 @@
+.search-results {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    background: white;
+    color: #444;
+    position: absolute;
+    font-size: 12px;
+    max-height: 135px;
+    width: 80%;
+    z-index: 99;
+    top: 37px;
+    border-radius: 8px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-results li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-results li:hover {
+    background: #f0f0f0;
+}
+
+form {
+    position: relative;
+}

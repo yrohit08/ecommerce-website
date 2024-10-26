@@ -1,0 +1,24 @@
+/* Carousel.css */
+
+.carousel {
+    max-height: 500px; /* Adjust this value as necessary */
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto; /* Keep aspect ratio */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        max-height: 300px; /* Adjust for mobile */
+    }
+    .carousel-item img {
+        object-fit: cover; /* Maintain full coverage on small screens */
+    }
+    .carousel-caption {
+        font-size: 14px; /* Adjust caption size */
+    }
+}

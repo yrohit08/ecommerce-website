@@ -1,0 +1,86 @@
+.payment-page {
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+  }
+  
+  .payment-page h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .payment-options label {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .payment-options input {
+    margin-right: 10px;
+  }
+  
+  .card-details {
+    margin-top: 20px;
+  }
+  
+  .card-details h3 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .card-details label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .card-details input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .pay-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pay-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Toast styling */
+  .payment-page .toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+.order-placed-container {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+  

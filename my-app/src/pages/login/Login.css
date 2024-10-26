@@ -1,0 +1,75 @@
+body.login {
+    background-image: url('../../images/login-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .login .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login .login-container {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login .slogan {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    text-align: left;
+  }
+  
+  .login h2 {
+    font-size: 30px;
+    color: #ff6f61;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .login label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6f61;
+  }
+  
+  .login .btn-primary, .btn-secondary {
+    background: linear-gradient(45deg, #ff6f61, #ff856c);
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login .btn-primary:hover, .btn-secondary:hover {
+    background: linear-gradient(45deg, #e65c50, #e07a60);
+  }
+  
+  .login .popup-message {
+    display: inline-block;
+    background-color: #f9edbe;
+    padding: 5px 10px;
+    border: 2px solid #c1a437;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #6c757d;
+    margin-left: 10px;
+  }
+  
+  .login .text-success {
+    color: green;
+  }
+  
+  .login .text-danger {
+    color: red;
+  }
+  

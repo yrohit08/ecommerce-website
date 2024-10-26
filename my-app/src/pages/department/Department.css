@@ -1,0 +1,43 @@
+.category-card img {
+  height: 200px;
+  object-fit: cover;
+}
+.navbar {
+  background-color: #007BFF; /* Similar to Walmart's blue */
+  color: white;
+}
+
+.form-inline .form-control {
+  width: 80%;
+}
+.navbar .fa {
+  color: white;
+}
+.btn-outline-light {
+  border-color: white;
+}
+ .filter-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .filter-icon:hover {
+      background-color: #0056b3;
+    }
+    #filterMenu {
+      position: fixed;
+      bottom: 80px;
+      right: 45px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      z-index: 10;
+      border-radius: 10px;
+    }

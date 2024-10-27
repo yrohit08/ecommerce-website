@@ -1,9 +1,13 @@
 import React from 'react';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 
 const TandC = () => {
     return (
         <>
+         <Header />
+
             <div class="container mt-5">
                 <h2>Terms and Conditions</h2>
                 <p>Welcome to E-Cart! These terms and conditions outline the rules and regulations for the use of our website.</p>
@@ -19,6 +23,7 @@ const TandC = () => {
             <footer class="bg-light text-center py-3">
                 <p>&copy; 2024 E-Cart. All rights reserved.</p>
             </footer>
+            <Footer />
         </>
     )
 }

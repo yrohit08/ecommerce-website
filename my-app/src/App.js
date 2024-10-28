@@ -17,6 +17,7 @@ import Login from './pages/login/Login'
 import './App.css';
 import { AuthProvider } from './context/AuthContext';
 import Payment from './pages/payment/Payment';
+import { BASE_PATH } from './config';
 
 
 const App = () => {
@@ -25,7 +26,7 @@ const App = () => {
     <ProductProvider>
       <div className="wrapper">
         <main>
-          <Router>
+          <Router basename={BASE_PATH}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="*" element={<Home />} />

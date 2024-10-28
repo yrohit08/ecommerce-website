@@ -85,7 +85,7 @@ const Payment = () => {
     };
 
     const handlePay = () => {
-        if (validateCardDetails()) {
+        if (paymentMethod !== 'card' || validateCardDetails()) {
             // Proceed with payment logic
             localStorage.removeItem('cartData');
             setOrderPlaced(true);

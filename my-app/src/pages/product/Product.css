@@ -60,3 +60,21 @@
     font-size: 18px;
     font-weight: bold;
 }
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    width: fit-content;  /* Adjust width as necessary */
+    height: auto;  /* This will depend on your specific use case */
+  }
+  
+  .product-image {
+    width: 60%;  /* This ensures the image fits its container */
+    transition: transform 0.25s ease;
+    transform-origin: center;
+    cursor: zoom-in;
+  }
+  
+  .product-image:hover {
+    transform: scale(1.2);
+  }
+  

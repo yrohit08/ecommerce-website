@@ -6,6 +6,7 @@ import Footer from '../../components/footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import PageNotFound from '../pagenotfound/PageNotFound';
 import "./Product.css";
+import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
 const Product = () => {
 
@@ -86,30 +87,46 @@ const Product = () => {
 
     return (
         <>
-            <Header />
+          <Header />
             <div className="container mt-5 mb-5">
                 <div className="row">
                     {/* Product Image */}
                     <div className="col-md-6">
+                       <TransformWrapper defaultScale={1} defaultPositionX={100} defaultPositionY={100}>
+                        <TransformComponent>
+                       
                         <img
                             src={product.image}
                             alt={product.name}
                             className="img-fluid product-image"
                         />
+                        </TransformComponent>
+                        </TransformWrapper>
+
+                        <p>Double Click on the Image to Zoom in</p>
                     </div>
                     {/* Product Info */}
                     <div className="col-md-6">
                         <h2>{product.name}</h2>
                         <p className="text-muted">{product.description}</p>
                         <p className="h4">${product.price.toFixed(2)}</p>
-
                         <ul>
-                            {product.details.provider && <li><b>Service provider: </b>{product.details.provider}</li>}
+
+                        {product.details.provider && <li><b>Provider: </b>{product.details.provider}</li>}
                             {product.details.screenSize && <li><b>Screen size: </b>{product.details.screenSize}</li>}
                             {product.details.storage && <li><b>HD capacity: </b>{product.details.storage}</li>}
                             {product.details.ram && <li><b>RAM memory: </b>{product.details.ram}</li>}
                             {product.details.features && <li><b>Features: </b>{product.details.features}</li>}
-                        </ul>
+                            {product.details.watts && <li><b>Watts: </b>{product.details.watts}</li>}
+                            {product.details.model && <li><b>Model: </b>{product.details.model}</li>}
+                            {product.details.brand && <li><b>Brand: </b>{product.details.brand}</li>}
+                            {product.details.color && <li><b>Color: </b>{product.details.color}</li>}
+                            {product.details.fabricContent && <li><b>Fabric Content: </b>{product.details.fabricContent}</li>}
+                            {product.details.brand && <li><b>Brand: </b>{product.details.brand}</li>}
+                            {product.details.weight && <li><b>Weight: </b>{product.details.weight}</li>}
+
+                            
+                        </ul>
 
                         <h5>Customer Rating:</h5>
                         <div className="stars">

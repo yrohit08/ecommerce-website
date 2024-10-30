@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ProductProvider } from './context/ProductContext';
 
 import Department from './pages/department/Department';
@@ -26,7 +26,7 @@ const App = () => {
     <ProductProvider>
       <div className="wrapper">
         <main>
-          <Router basename={BASE_PATH}>
+          <Router>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="*" element={<Home />} />

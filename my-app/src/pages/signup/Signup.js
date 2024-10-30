@@ -5,26 +5,42 @@ import './Signup.css';
 const Signup = () => {
   const [statusMessage, setStatusMessage] = useState('');
   const [statusClass, setStatusClass] = useState('');
-  useEffect(() => {
-    // Add class to body when component mounts
-    document.body.classList.add('signup');
+  const [password, setPassword] = useState('');
+  const [validation, setValidation] = useState({
+    length: false,
+    capital: false,
+    lowercase: false,
+    number: false,
+    symbol: false,
+  });
 
-    // Remove class from body when component unmounts
+  useEffect(() => {
+    document.body.classList.add('signup');
     return () => {
       document.body.classList.remove('signup');
     };
   }, []);
+
   const navigate = useNavigate();
+
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    setValidation({
+      length: newPassword.length >= 12,
+      capital: /[A-Z]/.test(newPassword),
+      lowercase: /[a-z]/.test(newPassword),
+      number: /[0-9]/.test(newPassword),
+      symbol: /[!@#$%^&*]/.test(newPassword),
+    });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const email = event.target.email.value;
-    const password = event.target.password.value;
     const username = event.target.name.value;
 
-    // Retrieve users from localStorage or initialize as an empty array
     let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
-
     const userExists = users.some(user => user.email === email);
 
     if (userExists) {
@@ -60,23 +76,38 @@ const Signup = () => {
 
           <div className="form-group">
             <label htmlFor="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Phone" className="form-control" required
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Phone"
+              className="form-control"
+              required
               pattern="^\+?[1-9]\d{1,14}$"
-              title="Please enter a valid international phone number, with or without a country code." />
+              title="Please enter a valid international phone number, with or without a country code."
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" className="form-control" id="password" name="password" placeholder="Password" required
-              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{12,}$"
-              title="Password must be at least 12 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character (!@#$%^&*)." />
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+            />
           </div>
 
           <ul>
-            <li>A mix of uppercase letters (A-Z).</li>
-            <li>Include lowercase letters (a-z).</li>
-            <li>Add numbers (0-9).</li>
-            <li>Include special characters (e.g., !, @, #, $, %, ^, &, *).</li>
+            <li style={{ color: validation.length ? 'green' : 'red' }}>At least 12 characters</li>
+            <li style={{ color: validation.capital ? 'green' : 'red' }}>One uppercase letter (A-Z)</li>
+            <li style={{ color: validation.lowercase ? 'green' : 'red' }}>One lowercase letter (a-z)</li>
+            <li style={{ color: validation.number ? 'green' : 'red' }}>One number (0-9)</li>
+            <li style={{ color: validation.symbol ? 'green' : 'red' }}>One special character (!@#$%^&*)</li>
           </ul>
 
           <button type="submit" className="btn btn-primary">Sign Up</button>

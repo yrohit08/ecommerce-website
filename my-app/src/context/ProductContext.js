@@ -220,7 +220,160 @@ const products = [
           features: ["Breathable", "Comfort Fit", "Cooling", "Easy Care"],
         },
         customerRating: 5
-    }
+    },
+    {
+        id: 13, // Unique identifier for the product
+        name: "Eureka Stylus Elite Anti-Tangle Cordless Stick Vacuum Cleaner",
+        price: 198.00,
+        description: "By Eureka",
+        department: "homeAppliances",
+        category: "Vaccum Cleaners",
+        image: "https://i5.walmartimages.com/seo/Stylus-Elite-Anti-Tangle-Cordless-Stick-Vacuum-with-Auto-Emptying-Dust-Station_edbc87ed-ed1e-45a2-bfe6-ebc492386dca.c9855cea783812e9647ba6fdc963f508.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+        details: {
+          provider: "Eureka",
+          watts: "350 W",
+          model: "NEC490SE",
+          brand: "GENTS BLISS",
+          color: "Black",
+        },
+        customerRating: 4
+    },
+    {
+        id: 14, // Unique identifier for the product
+        name: "Crock-Pot® 4-Quart Classic Slow Cooker",
+        price: 20.00,
+        description: "By Crock-Pot",
+        department: "homeAppliances",
+        category: "Cookers",
+        image: "https://i5.walmartimages.com/seo/Crock-Pot-4-Quart-Classic-Slow-Cooker-Black_e49da9ba-70eb-44d8-9397-f5a28251d5fd_1.e1bb1c626406ce17ec33c8488dd480f1.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+        details: {
+          provider: "Crock-Pot",
+          watts: "200 W",
+          model: "SCV400-SS",
+          brand: "Crock-Pot",
+          color: "Black",
+        },
+        customerRating: 4
+    },
+    {
+        id: 15, // Unique identifier for the product
+        name: "Eureka Stylus Elite Anti-Tangle Cordless Stick Vacuum Cleaner",
+        price: 198.00,
+        description: "Hamilton Beach",
+        department: "homeAppliances",
+        category: "Grinders",
+        image: "https://i5.walmartimages.com/seo/Hamilton-Beach-Wave-Crusher-Multi-Function-Blender-40-oz-Glass-Jar-Black-58165_c8788304-2749-4048-af5c-78963e82a221_1.c5fdc640d0e2df1e3de677d241bc90e4.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+        details: {
+          provider: "Hamilton Beach",
+          watts: "700 W",
+          model: "NEC490SE",
+          brand: "Hamilton Beach",
+          color: "Black",
+        },
+        customerRating: 4
+    },
+    {
+        id: 16, // Unique identifier for the product
+        name: "Magic Bullet 4 Piece Personal Blender",
+        price: 20.00,
+        description: "By Magic Bullet",
+        department: "homeAppliances",
+        category: "Blenders",
+        image: "https://i5.walmartimages.com/seo/Magic-Bullet-4-Piece-Personal-Blender-MBR-0401WM-Black_216ad3f3-94a3-4b96-8c71-1850a5c99b61.bf0a179a1d0c72192d5cde9f33f00d56.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+        details: {
+          provider: "Magic Bullet",
+          watts: "250 W",
+          model: "MBR-0401WM",
+          brand: "Magic Bullet",
+          color: "Black",
+        },
+        customerRating: 4
+    },
+    {
+        id: 17, // Unique identifier for the product
+        name: "Mainstays 2-Slice Toaster",
+        price: 10.00,
+        description: "By Mainstays",
+        department: "homeAppliances",
+        category: "Toaster",
+        image: "https://i5.walmartimages.com/asr/10613477-60e9-4102-a76c-7b8ba15f575a.cc3b6aaac8815ee64780cb0f611eb120.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+        details: {
+          provider: "Mainstays",
+          watts: null,
+          model: "TA1057",
+          brand: "Mainstays",
+          color: "Black",
+        },
+        customerRating: 4
+    },
+    {
+        id: 18, // Unique identifier for the product
+        name: "Chefman ExacTemp 12 Quart 5-in-1 Air Fryer",
+        price: 99.00,
+        description: "By Chefman",
+        department: "homeAppliances",
+        category: "Clothing",
+        image: "https://i5.walmartimages.com/seo/Chefman-ExacTemp-12-Quart-5-in-1-Air-Fryer-with-Integrated-Smart-Thermometer-28-Presets-Black-New_d9e97d6f-b231-4aac-8bfa-385225f777d3.9538a7585d54e4852e8e391e4c90c111.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+        details: {
+          provider: "Chefman",
+          watts: "1700 W",
+          model: "RJ38-RDO-PV12",
+          brand: "Chefman",
+          color: "Black",
+        },
+        customerRating: 4
+    },
+    {
+        id: 19, // Unique identifier for the product
+        name: "Refrigerator",
+        price: 899.00,
+        description: "By Unique Appliances",
+        department: "homeAppliances",
+        category: "Refrigerator",
+        image: "https://i5.walmartimages.com/seo/Unique-Prestige-21-6-Freestanding-8-7-cu-ft-Bottom-Freezer-Refrigerator-ENERGY-STAR-Certified_5304491f-5975-4d60-a4d3-cc08c2dd21ca.4208911c92ee78dce991f7da34e9f214.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+        details: {
+          provider: "Unique Appliances",
+          watts: null,
+          model: "UGP-278L P SS",
+          brand: "Unique Appliances",
+          color: "Black",
+        },
+        customerRating: 4
+    },
+    {
+        id: 20, // Unique identifier for the product
+        name: "Egg Cooker",
+        price: 9.00,
+        description: "By MyMini",
+        department: "homeAppliances",
+        category: "Boiler",
+        image: "https://i5.walmartimages.com/seo/MyMini-Premium-7-Egg-Cooker-Teal_5c472cf4-ff64-4947-a8a3-63ec437eb3a5.9d59655e3dad2d2e51dfd40747475aef.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+        details: {
+          provider: "MyMini",
+          watts: null,
+          model: "MEC7TL",
+          brand: "MyMini",
+          color: "Black",
+        },
+        customerRating: 5
+    },
+    {
+        id: 21, // Unique identifier for the product
+        name: "Coffee Maker",
+        price: 49.00,
+        description: "By Keurig",
+        department: "homeAppliances",
+        category: "Clothing",
+        image: "https://i5.walmartimages.com/asr/00eb84c1-ecc5-458c-ab35-ba60a393101b.f13bae148b53039e00d13c36142fbeef.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+        details: {
+          provider: "Keurig",
+          watts: null,
+          model: "K-Express Essentials",
+          brand: "Keurig",
+          color: "Black",
+        },
+        customerRating: 4
+    }
     
     // Add more products as needed
 ];

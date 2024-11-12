@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 
 const Faq = () => {
     return (
         <>
+        <Header />
             <div class="container mt-5">
                 <h2>Frequently Asked Questions (FAQ)</h2>
 
@@ -58,6 +61,7 @@ const Faq = () => {
             <footer class="bg-light text-center py-3">
                 <p>&copy; 2024 E-Cart. All rights reserved.</p>
             </footer>
+            <Footer />
         </>
     )
 }

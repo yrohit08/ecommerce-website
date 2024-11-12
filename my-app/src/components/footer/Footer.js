@@ -31,7 +31,7 @@ const Footer = () => {
                         <p>
                             <strong>Email:</strong> support@ecart.com <br />
                             <strong>Phone:</strong> +123-456-7890 <br />
-                            <strong>Address:</strong> 123 Shopping Street, City, Country
+                            <strong>Address:</strong> 123 Shopping Street, New York City, United states of America
                         </p>
                         <div>
                             <a href="#" className="text-white mr-2" aria-label="Facebook">

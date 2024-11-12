@@ -1,9 +1,11 @@
 import React from 'react';
-
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 const DeliveryInfo = () => {
     return (
         <>
+        <Header />
             <div class="container mt-5">
                 <h2>Delivery Information</h2>
                 <p>We aim to deliver your orders as quickly as possible. The estimated delivery time for most products is 5-7 business days.</p>
@@ -18,6 +20,7 @@ const DeliveryInfo = () => {
             <footer class="bg-light text-center py-3">
                 <p>&copy; 2024 E-Cart. All rights reserved.</p>
             </footer>
+            <Footer />
         </>
     )
 }

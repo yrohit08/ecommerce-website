@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 
 const ReturnPolicy = () => {
     return (
         <>
+        <Header />
             <div class="container mt-5">
                 <h2>Return Policy</h2>
                 <p>We want you to be completely satisfied with your purchase. If you are not satisfied, you can return most items within 30 days of delivery for a full refund, subject to the following conditions:</p>
@@ -18,6 +21,7 @@ const ReturnPolicy = () => {
             <footer class="bg-light text-center py-3">
                 <p>&copy; 2024 E-Cart. All rights reserved.</p>
             </footer>
+            <Footer />
         </>
     )
 }

@@ -41,3 +41,19 @@
       z-index: 10;
       border-radius: 10px;
     }
+    .label {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: white;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+    
+    .new-arrival {
+      background-color: #ff5733; /* Example color */
+    }
+    
+    .best-seller {
+      background-color: #28a745; /* Example color */
+    }

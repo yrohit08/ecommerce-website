@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import PageNotFound from '../pagenotfound/PageNotFound';
 import "./Product.css";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+import { FacebookShareButton, TwitterShareButton, WhatsappShareButton, FacebookIcon, TwitterIcon, WhatsappIcon } from 'react-share';
 
 const Product = () => {
 
@@ -84,7 +85,7 @@ const Product = () => {
         navigate('/cart'); // Redirect to payment page
     };
     if (!product) return <PageNotFound />;
-
+    const productUrl = window.location.href;
     return (
         <>
           <Header />
@@ -137,7 +138,21 @@ const Product = () => {
                             ))}
                         </div>
 
+                        {!product.isInStock && <div className="out-of-stock-overlay">Out of Stock</div>}
+                        <div>
+          <FacebookShareButton url={productUrl} quote={product.name}>
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+          <TwitterShareButton url={productUrl} title={product.name}>
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+          <WhatsappShareButton url={productUrl} title={product.name}>
+            <WhatsappIcon size={32} round />
+          </WhatsappShareButton>
+        </div>
                         <br />
+
+                       
 
                         {/* Add to Cart Button */}
                         <div className='button-container mt-3'>

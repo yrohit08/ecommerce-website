@@ -1,6 +1,8 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ProductProvider } from './context/ProductContext';
+import ScrollToTop from './components/scrolltotop/ScrollToTop';
+
 
 import Department from './pages/department/Department';
 import Product from './pages/product/Product';
@@ -24,6 +26,7 @@ const App = () => {
   return (
     <AuthProvider>
     <ProductProvider>
+    <ScrollToTop />
       <div className="wrapper">
         <main>
           <Router>

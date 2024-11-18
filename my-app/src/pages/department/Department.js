@@ -110,6 +110,11 @@ const Department = () => {
                     {filteredProducts.map((product) => (
                         <div className="col-md-4" key={product.id} data-price={product.price} data-name={product.name} data-category={product.category}>
                             <div className="card">
+
+                            <div> 
+                                {product.isNewArrival && <span className="label new-arrival">New Arrival</span>}
+                                {product.isBestSeller && <span className="label best-seller">Best Seller</span>}
+                                </div>
                                 <span onClick={() => handleProductClick(product.id)}>
                                     <img src={product.image} className="card-img-top" alt={product.name} width="380px" height="350px" />
                                 </span>

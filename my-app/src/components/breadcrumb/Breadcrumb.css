@@ -1,0 +1,12 @@
+ 
+  .breadcrumb-item {
+    color: #007bff;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
+  .breadcrumb-item.active {
+    color: #6c757d;
+    pointer-events: none;
+  }
+  

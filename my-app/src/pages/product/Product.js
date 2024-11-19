@@ -8,6 +8,7 @@ import PageNotFound from '../pagenotfound/PageNotFound';
 import "./Product.css";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 import { FacebookShareButton, TwitterShareButton, WhatsappShareButton, FacebookIcon, TwitterIcon, WhatsappIcon } from 'react-share';
+import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
 
 const Product = () => {
 
@@ -89,6 +90,7 @@ const Product = () => {
     return (
         <>
           <Header />
+          <Breadcrumb product={product} />
             <div className="container mt-5 mb-5">
                 <div className="row">
                     {/* Product Image */}

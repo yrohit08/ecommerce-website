@@ -6,6 +6,7 @@ import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import ComingSoon from '../comingsoon/ComingSoon';
 import "./Department.css";
+import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
 
 
 const Department = () => {
@@ -53,13 +54,15 @@ const Department = () => {
         return priceMatch && categoryMatch;
     });
 
-    if(products.length <= 0)  return (
+    if (products.length <= 0) return (
         <><ComingSoon /></>
     )
 
     return (
         <>
-        <Header />
+            <Header />
+            <Breadcrumb department={department} />
+
             <div className="filter-icon" onClick={() => setFilterMenuVisible(!filterMenuVisible)}>
                 <i className="fas fa-filter"></i>
             </div>
@@ -85,7 +88,7 @@ const Department = () => {
                 </div>
             )}
 
-            <div className="container mt-5">
+            <div className="container">
                 <h2 className="text-center text-capitalize">{department}</h2>
                 <p className="text-center">Browse the latest gadgets, smartphones, and electronic accessories.</p>
 
@@ -111,9 +114,9 @@ const Department = () => {
                         <div className="col-md-4" key={product.id} data-price={product.price} data-name={product.name} data-category={product.category}>
                             <div className="card">
 
-                            <div> 
-                                {product.isNewArrival && <span className="label new-arrival">New Arrival</span>}
-                                {product.isBestSeller && <span className="label best-seller">Best Seller</span>}
+                                <div>
+                                    {product.isNewArrival && <span className="label new-arrival">New Arrival</span>}
+                                    {product.isBestSeller && <span className="label best-seller">Best Seller</span>}
                                 </div>
                                 <span onClick={() => handleProductClick(product.id)}>
                                     <img src={product.image} className="card-img-top" alt={product.name} width="380px" height="350px" />

@@ -1,10 +1,8 @@
 /* ScrollToTop.css */
 .scroll-to-top-button {
   position: fixed;
-  bottom: 20px;
   right: 20px;
   padding: 10px;
-  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 50%;
@@ -12,8 +10,13 @@
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   transition: opacity 0.3s ease;
+  bottom: 100px;
+  width: 50px;
+  background: grey;
+  opacity: 0.5;
+  z-index: 9;
 }
 
 .scroll-to-top-button:hover {
-  background-color: #0056b3;
+  opacity: 1;
 }

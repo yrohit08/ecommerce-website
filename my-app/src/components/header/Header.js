@@ -66,6 +66,7 @@ const Header = () => {
                                             <i className="fas fa-user"></i> Welcome, {user?.username}
                                         </a>
                                         <div className="dropdown-menu" aria-labelledby="navbarDropdownAccount">
+                                            <Link to="/profile" className="dropdown-item">My Profile</Link>
                                             <span className="logout dropdown-item cursor-pointer" onClick={handleLogout} >Log Out</span>
                                         </div>
                                     </li>

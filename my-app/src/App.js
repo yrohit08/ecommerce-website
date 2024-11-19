@@ -20,6 +20,7 @@ import './App.css';
 import { AuthProvider } from './context/AuthContext';
 import Payment from './pages/payment/Payment';
 import { BASE_PATH } from './config';
+import Profile from './pages/profile/Profile';
 
 
 const App = () => {
@@ -44,6 +45,7 @@ const App = () => {
               <Route path="/cart" element={<Cart />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/payment" element={<Payment />} />
             </Routes>
           </Router>

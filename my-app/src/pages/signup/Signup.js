@@ -39,6 +39,7 @@ const Signup = () => {
     event.preventDefault();
     const email = event.target.email.value;
     const username = event.target.name.value;
+    const phone = event.target.phone.value;
 
     let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
     const userExists = users.some(user => user.email === email);
@@ -47,7 +48,7 @@ const Signup = () => {
       setStatusMessage("Account already exists! Please login.");
       setStatusClass('text-danger');
     } else {
-      users.push({ email, password, username });
+      users.push({ email, password, username, phone });
       localStorage.setItem('registeredUsers', JSON.stringify(users));
 
       setStatusMessage("Account successfully created! Redirecting to the login page...");

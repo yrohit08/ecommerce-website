@@ -10,7 +10,7 @@ import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
 const Department = () => {
     const { department } = useParams();
     let products = useProducts();
-    products = products.filter((product) => product.department === department.toLowerCase());
+    products = products.filter((product) => product.department == department);
     const navigate = useNavigate();
 
     const [cartData, setCartData] = useState(JSON.parse(localStorage.getItem('cartData')) || []);
@@ -20,7 +20,7 @@ const Department = () => {
     const departmentDescriptions = {
         electronics: 'Browse the latest gadgets, smartphones, and electronic accessories.',
         fashion: 'Explore the newest trends in clothing, footwear, and accessories.',
-        homeappliances: 'Discover the latest in kitchen gadgets, cookware, and appliances to enhance your culinary adventures.',
+        //homeAppliances: 'Discover the latest in kitchen gadgets, cookware, and appliances to enhance your culinary adventures.',
         // Add more departments as needed
     };
 

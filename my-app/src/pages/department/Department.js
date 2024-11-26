@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useProducts } from '../../context/ProductContext';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
@@ -8,12 +7,16 @@ import ComingSoon from '../comingsoon/ComingSoon';
 import "./Department.css";
 import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
 
-
 const Department = () => {
     const { department } = useParams();
     let products = useProducts();
-    products = products.filter((product) => product.department == department);
+    products = products.filter((product) => product.department === department.toLowerCase());
     const navigate = useNavigate();
+
+    const [cartData, setCartData] = useState(JSON.parse(localStorage.getItem('cartData')) || []);
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+    const [quantities, setQuantities] = useState({}); // State to track quantities of each product
+
     const departmentDescriptions = {
         electronics: 'Browse the latest gadgets, smartphones, and electronic accessories.',
         fashion: 'Explore the newest trends in clothing, footwear, and accessories.',
@@ -21,11 +24,42 @@ const Department = () => {
         // Add more departments as needed
     };
 
-    // Get description for the current department
     const departmentDescription = departmentDescriptions[department.toLowerCase()] || 'Browse our products';
 
     const handleProductClick = (id) => {
         navigate(`/product/${id}`);
+    };
+
+    const adjustQuantity = (product, delta) => {
+        if (!product.isInStock) return; // Ignore if product is out of stock
+        const newQuantity = (quantities[product.id] || 0) + delta;
+
+        if (newQuantity < 0) return; // Ensure quantity doesn't go negative
+
+        // Update local quantity state
+        setQuantities(prevQuantities => ({
+            ...prevQuantities,
+            [product.id]: newQuantity
+        }));
+
+        // Find the item in the cart or add a new one
+        const existingItemIndex = cartData.findIndex(item => item.id === product.id);
+        let updatedCart = [...cartData];
+
+        if (existingItemIndex !== -1) {
+            if (newQuantity === 0) {
+                updatedCart.splice(existingItemIndex, 1); // Remove item from cart if quantity is zero
+            } else {
+                updatedCart[existingItemIndex] = { ...updatedCart[existingItemIndex], quantity: newQuantity };
+            }
+        } else if (newQuantity > 0) {
+            updatedCart.push({ ...product, quantity: newQuantity });
+        }
+
+        setCartData(updatedCart);
+        localStorage.setItem('cartData', JSON.stringify(updatedCart));
+        setShowSuccessMessage(true);
+        setTimeout(() => setShowSuccessMessage(false), 2000);
     };
 
     const [sortBy, setSortBy] = useState('default');
@@ -63,9 +97,7 @@ const Department = () => {
         return priceMatch && categoryMatch;
     });
 
-    if (products.length <= 0) return (
-        <><ComingSoon /></>
-    )
+    if (products.length <= 0) return <><ComingSoon /></>;
 
     return (
         <>
@@ -102,7 +134,7 @@ const Department = () => {
                 <p className="text-center">{departmentDescription}</p>
 
                 <div className="text-center mb-4">
-                    <label htmlFor="sortSelect" className="pr-2" >Sort by: </label>
+                    <label htmlFor="sortSelect" className="pr-2">Sort by: </label>
                     <select
                         id="sortSelect"
                         className="form-control d-inline-block w-auto"
@@ -122,25 +154,32 @@ const Department = () => {
                     {filteredProducts.map((product) => (
                         <div className="col-md-4" key={product.id} data-price={product.price} data-name={product.name} data-category={product.category}>
                             <div className="card">
-
                                 <div>
                                     {product.isNewArrival && <span className="label new-arrival">New Arrival</span>}
                                     {product.isBestSeller && <span className="label best-seller">Best Seller</span>}
                                     {!product.isInStock && <span className="label out-of-stock">Out of Stock</span>}
                                 </div>
-                                <span onClick={() => handleProductClick(product.id)}>
-                                    <img src={product.image} className="card-img-top" alt={product.name} width="380px" height="350px" />
-                                </span>
+                                <img src={product.image} className="card-img-top" alt={product.name} width="380px" height="350px" onClick={() => handleProductClick(product.id)} />
                                 <div className="card-body">
                                     <h5 className="card-title">{product.name}</h5>
                                     <p className="card-text">${product.price}</p>
-                                    <span onClick={() => handleProductClick(product.id)} className="btn btn-primary">More Details</span>
+                                    <button onClick={() => handleProductClick(product.id)} className="btn btn-primary">More Details</button>
+                                    <div className="quantity-controls">
+                                        <button disabled={!product.isInStock || quantities[product.id] === 0} onClick={() => adjustQuantity(product, -1)}>-</button>
+                                        <span>{quantities[product.id] || 0}</span>
+                                        <button disabled={!product.isInStock} onClick={() => adjustQuantity(product, 1)}>+</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+            {showSuccessMessage && (
+                <div className="message">
+                    Item updated in cart!
+                </div>
+            )}
             <Footer />
         </>
     );

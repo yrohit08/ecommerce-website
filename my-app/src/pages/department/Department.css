@@ -62,3 +62,65 @@
     .out-of-stock {
       background-color: #ff5733; /* Example color */
     }
+/* General card body styling for alignment and text */
+.card-body {
+  text-align: center;
+  padding: 20px;
+}
+
+/* More Details button styling */
+.more-details-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.more-details-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Quantity control styling */
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px; /* Additional spacing from the button above */
+}
+
+.quantity-controls button {
+  background-color: #f8f9fa; /* Light grey background */
+  color: #495057; /* Dark grey color for text */
+  border: 1px solid #ced4da;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Circular shape */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.quantity-controls button:hover {
+  background-color: #e2e6ea; /* Slightly darker on hover */
+  color: #212529; /* Darker text on hover */
+}
+
+.quantity-controls button:disabled {
+  background-color: #e9ecef;
+  color: #adb5bd;
+  cursor: not-allowed;
+}
+
+.quantity-controls span {
+  width: 40px; /* Wider space for the number */
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+}

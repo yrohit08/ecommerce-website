@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/~sthallap/383/static/css/main.018dc2c6.css",
+    "main.js": "/~sthallap/383/static/js/main.e20a824e.js",
+    "static/js/453.ed3810f9.chunk.js": "/~sthallap/383/static/js/453.ed3810f9.chunk.js",
+    "static/media/login-bg.png": "/~sthallap/383/static/media/login-bg.2953b8913f4206364116.png",
+    "static/media/home-page-01.jpg": "/~sthallap/383/static/media/home-page-01.df18fd61c090b948902d.jpg",
+    "static/media/home-page-02.png": "/~sthallap/383/static/media/home-page-02.0bd2f3c5f55c4c089261.png",
+    "static/media/home-page-03.png": "/~sthallap/383/static/media/home-page-03.cd7a68c9e7bfe2b6e4fd.png",
+    "static/media/green-check-icon.jpg": "/~sthallap/383/static/media/green-check-icon.afa8d6f3019c38611d56.jpg",
+    "index.html": "/~sthallap/383/index.html",
+    "main.018dc2c6.css.map": "/~sthallap/383/static/css/main.018dc2c6.css.map",
+    "main.e20a824e.js.map": "/~sthallap/383/static/js/main.e20a824e.js.map",
+    "453.ed3810f9.chunk.js.map": "/~sthallap/383/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.018dc2c6.css",
+    "static/js/main.e20a824e.js"
+  ]
+}

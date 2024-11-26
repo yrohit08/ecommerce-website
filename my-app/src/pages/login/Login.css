@@ -1,75 +1,135 @@
 body.login {
-    background-image: url('../../images/login-bg.jpg');
+    background-image: url('../../images/login-bg.png'); /* Use your preferred image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Ensure consistent typography */
     height: 100vh;
     margin: 0;
-  }
-  
-  .login .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end; /* Align the login container to the right */
+    align-items: center; /* Center vertically */
+    padding-right: 15%; /* Add spacing from the right edge */
+}
+
+.login .container {
+    display: flex;
+    justify-content: flex-end; /* Move the login box to the right */
+    align-items: center; /* Vertically center the login box */
     height: 100vh;
-  }
-  
-  .login .login-container {
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .login .slogan {
+    width: 100%;
+}
+
+.login .login-container {
+    width: 350px; /* Adjust width as needed */
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners for better design */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.login .slogan {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0078d4; /* Match the blue from your home page */
+    text-align: center;
+}
+
+.login h2 {
+    font-size: 26px; /* Match heading size */
+    color: #333; /* Neutral text color */
+    font-weight: 700;
+    text-align: center; /* Center-align heading */
     margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #007bff;
-    text-align: left;
-  }
-  
-  .login h2 {
-    font-size: 30px;
-    color: #ff6f61;
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  .login label {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff6f61;
-  }
-  
-  .login .btn-primary, .btn-secondary {
-    background: linear-gradient(45deg, #ff6f61, #ff856c);
+}
+
+.login label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555; /* Muted label color */
+    margin-bottom: 5px;
+    display: block;
+}
+
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* Softer input background */
+    outline: none;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus,
+.login input[type="email"]:focus {
+    border-color: #0078d4;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 120, 212, 0.2);
+}
+
+.login .btn-primary, .login .btn-secondary {
+    width: 100%;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #0078d4, #00a0ff); /* Gradient for buttons */
     border: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login .btn-primary:hover, .btn-secondary:hover {
-    background: linear-gradient(45deg, #e65c50, #e07a60);
-  }
-  
-  .login .popup-message {
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login .btn-primary:hover, .login .btn-secondary:hover {
+    background: linear-gradient(45deg, #005ea8, #007ac1); /* Darker hover effect */
+    box-shadow: 0 4px 8px rgba(0, 90, 180, 0.4);
+}
+
+.login .popup-message {
     display: inline-block;
-    background-color: #f9edbe;
-    padding: 5px 10px;
-    border: 2px solid #c1a437;
-    border-radius: 8px;
-    font-weight: bold;
-    color: #6c757d;
-    margin-left: 10px;
-  }
-  
-  .login .text-success {
-    color: green;
-  }
-  
-  .login .text-danger {
-    color: red;
-  }
-  
+    background-color: #f0f9ff;
+    padding: 8px 12px;
+    border: 1px solid #0078d4;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #333;
+    margin-top: 10px;
+}
+
+.login .text-success {
+    color: #28a745; /* Standard green */
+}
+
+.login .text-danger {
+    color: #dc3545; /* Standard red */
+}
+
+.login .create-account {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login .create-account a {
+    color: #0078d4; /* Match blue link color */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login .create-account a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login .login-container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}

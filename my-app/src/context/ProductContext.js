@@ -4,7 +4,7 @@ import React, { createContext, useContext } from 'react';
 const products = [
     {
         id: 1,
-        name: "Samsung Galaxy S21 5G",
+        name: "Samsung Galaxy S21 5G, 128GB Gray - Unlocked",
         price: 164.0,
         description:
           'SAMSUNG Galaxy S21 5G 128GB - Unlocked smartphone with 6.2" screen and 8GB RAM',
@@ -27,7 +27,7 @@ const products = [
       },
       {
         id: 2, // Incrementing the ID for each product
-        name: "iPhone 16",
+        name: "Apple iPhone 16 Pro, US Version, 256GB, Desert Titanium - Unlocked",
         price: 799.0,
         description: "By Apple",
         department: "electronics",
@@ -48,7 +48,7 @@ const products = [
       },
       {
         id: 3,
-        name: "Sony Wireless Headphones",
+        name: "Sony WH-1000XM5 The Best Wireless Noise Canceling Headphones, Black",
         price: 289.0,
         description:
           "Sony Wireless Headphones with built-in microphone and Bluetooth connectivity",
@@ -162,7 +162,7 @@ const products = [
     
       {
         id: 8,
-        name: "Moto G Play",
+        name: "Moto G Play 4G 2024, 64GB, Blue",
         price: 499.0,
         description: "By Motorola",
         department: "electronics",
@@ -182,7 +182,7 @@ const products = [
     
       {
         id: 9,
-        name: "OnePlus 10 Pro 5G",
+        name: "OnePlus 10 Pro 5G Dual SIM 128GB 8GB RAM GSM Unlocked - Black",
         price: 395.0,
         description: "By OnePlus",
         department: "electronics",
@@ -202,7 +202,7 @@ const products = [
     
       {
         id: 10,
-        name: "Crew Neck Men Sweatshirt",
+        name: "GENTS BLISS Henley Sweatshirts for Men Long Sleeve",
         price: 20.0,
         description:
           "GENTS BLISS Crew Neck Sweatshirts for Men - Henley Long Sleeve Tops, Casual Pullover Sweatshirt with Pocket, Comfort Fit, Cooling, and Easy Care.",
@@ -285,7 +285,7 @@ const products = [
     
       {
         id: 14, // Unique identifier for the product
-        name: "Wrangler Men's Shirt",
+        name: "Wrangler Men's Long Sleeve",
         price: 23.0,
         description:
           "A stylish T-shirt and pants set featuring The Avengers theme, perfect for active boys.",
@@ -325,7 +325,7 @@ const products = [
       },
       {
         id: 16, // Unique identifier for the product
-        name: "Boys T-Shirt & Pants",
+        name: "Casual Matching Outfit Set for Boys (4-12)",
         price: 22.0,
         description:
           "A stylish T-shirt and pants set featuring The Avengers theme, perfect for active boys.",
@@ -346,7 +346,7 @@ const products = [
       },
       {
         id: 17, // Unique identifier for the product
-        name: "Women Dress",
+        name: "Women's Dresses Elastic Waist Dress with Pockets",
         price: 50.0,
         description: "By Jessica Simpson",
         department: "fashion",
@@ -367,7 +367,7 @@ const products = [
       },
       {
         id: 18, // Unique identifier for the product
-        name: "Womens SweatShirt",
+        name: "Women's Plush Hoodie",
         price: 20.0,
         description: "By GENTS BLISS",
         department: "fashion",
@@ -497,7 +497,7 @@ const products = [
     },
     {
         id: 25, // Unique identifier for the product
-        name: "Refrigerator",
+        name: "Element ENR18TFGCS 17.6 Cu. Ft. Stainless Top Freezer Refrigerator",
         price: 899.00,
         description: "By Unique Appliances",
         department: "homeAppliances",
@@ -515,7 +515,7 @@ const products = [
     },
     {
         id: 26, // Unique identifier for the product
-        name: "Egg Cooker",
+        name: "MyMini Premium 7-Egg Cooker, Teal",
         price: 9.00,
         description: "By MyMini",
         department: "homeAppliances",
@@ -533,7 +533,7 @@ const products = [
     },
     {
         id: 27, // Unique identifier for the product
-        name: "Coffee Maker",
+        name: "Keurig K-Express Essentials Matte Black Single-Serve K-Cup Pod Coffee Maker",
         price: 49.00,
         description: "By Keurig",
         department: "homeAppliances",

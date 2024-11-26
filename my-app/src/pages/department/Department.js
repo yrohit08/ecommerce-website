@@ -14,6 +14,15 @@ const Department = () => {
     let products = useProducts();
     products = products.filter((product) => product.department == department);
     const navigate = useNavigate();
+    const departmentDescriptions = {
+        electronics: 'Browse the latest gadgets, smartphones, and electronic accessories.',
+        fashion: 'Explore the newest trends in clothing, footwear, and accessories.',
+        homeappliances: 'Discover the latest in kitchen gadgets, cookware, and appliances to enhance your culinary adventures.',
+        // Add more departments as needed
+    };
+
+    // Get description for the current department
+    const departmentDescription = departmentDescriptions[department.toLowerCase()] || 'Browse our products';
 
     const handleProductClick = (id) => {
         navigate(`/product/${id}`);
@@ -90,7 +99,7 @@ const Department = () => {
 
             <div className="container">
                 <h2 className="text-center text-capitalize">{department}</h2>
-                <p className="text-center">Browse the latest gadgets, smartphones, and electronic accessories.</p>
+                <p className="text-center">{departmentDescription}</p>
 
                 <div className="text-center mb-4">
                     <label htmlFor="sortSelect" className="pr-2" >Sort by: </label>
@@ -117,6 +126,7 @@ const Department = () => {
                                 <div>
                                     {product.isNewArrival && <span className="label new-arrival">New Arrival</span>}
                                     {product.isBestSeller && <span className="label best-seller">Best Seller</span>}
+                                    {!product.isInStock && <span className="label out-of-stock">Out of Stock</span>}
                                 </div>
                                 <span onClick={() => handleProductClick(product.id)}>
                                     <img src={product.image} className="card-img-top" alt={product.name} width="380px" height="350px" />

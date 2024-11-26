@@ -1,76 +1,112 @@
 body.signup {
-    background-image: url('../../images/login-bg.jpg');
+    background-image: url('../../images/login-bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .signup .container {
+    font-family: 'Roboto', sans-serif; /* Match font with login page */
+}
+
+.signup .container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 100vh;
-  }
-  
-  .signup .signup-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
+}
+
+.signup .signup-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Match transparency with login page */
+    padding: 30px; /* Same padding as the login container */
+    border-radius: 10px; /* Slightly sharper edges */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    max-width: 400px; /* Reduce width for better alignment */
     width: 100%;
-  }
-  
-  .signup h2 {
-    font-size: 30px;
-    color: #ff6f61;
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  .signup label {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff6f61;
-  }
-  
-  .signup .form-control {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #ced4da;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .signup .btn-primary {
-    background: linear-gradient(45deg, #ff6f61, #ff856c);
+}
+
+.signup h2 {
+    font-size: 26px; /* Match login page heading size */
+    color: #333; /* Neutral text color */
+    font-weight: 700; /* Bold text for emphasis */
+    text-align: center; /* Center align heading */
+    margin-bottom: 20px;
+}
+
+.signup label {
+    font-size: 16px; /* Match label font size with login page */
+    font-weight: 500;
+    color: #555; /* Muted color for labels */
+    margin-bottom: 5px;
+    display: block;
+}
+
+.signup .form-control {
+    padding: 10px; /* Same padding as login page inputs */
+    border-radius: 5px; /* Match input radius */
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9; /* Softer input background */
+    box-shadow: none; /* Remove heavy shadow */
+    outline: none;
+}
+
+.signup .form-control:focus {
+    border-color: #0078d4; /* Match focus color with login page */
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 120, 212, 0.2);
+}
+
+.signup .btn-primary {
+    background: linear-gradient(45deg, #0078d4, #00a0ff); /* Match button gradient with login page */
     border: none;
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
     width: 100%;
-    transition: background 0.3s ease;
-  }
-  
-  .signup .btn-primary:hover {
-    background: linear-gradient(45deg, #e65c50, #e07a60);
-  }
-  
-  .signup ul {
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup .btn-primary:hover {
+    background: linear-gradient(45deg, #005ea8, #007ac1); /* Darker hover effect like login */
+    box-shadow: 0 4px 8px rgba(0, 90, 180, 0.4);
+}
+
+.signup ul {
     margin-top: 15px;
     padding-left: 20px;
-  }
-  
-  .signup li {
+}
+
+.signup li {
     font-size: 14px;
-  }
-  
-  .signup .text-success {
-    color: green;
-  }
-  
-  .signup .text-danger {
-    color: red;
-  }
-  
+}
+
+.signup .text-success {
+    color: #28a745; /* Match success color with login page */
+}
+
+.signup .text-danger {
+    color: #dc3545; /* Match error color with login page */
+}
+
+.signup .create-account {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.signup .create-account a {
+    color: #0078d4; /* Match link color with login page */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup .create-account a:hover {
+    text-decoration: underline;
+}
+
+/* Additional Responsive Design */
+@media (max-width: 768px) {
+    .signup .signup-container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}

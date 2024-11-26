@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ProductProvider } from './context/ProductContext';
 import ScrollToTop from './components/scrolltotop/ScrollToTop';
+import WhatsAppChat from './components/whatsappchat/WhatsAppChat';
 
 
 import Department from './pages/department/Department';
@@ -28,6 +29,7 @@ const App = () => {
     <AuthProvider>
     <ProductProvider>
     <ScrollToTop />
+    <WhatsAppChat/>
       <div className="wrapper">
         <main>
           <Router>

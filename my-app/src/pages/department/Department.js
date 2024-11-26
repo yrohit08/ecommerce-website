@@ -20,7 +20,7 @@ const Department = () => {
     const departmentDescriptions = {
         electronics: 'Browse the latest gadgets, smartphones, and electronic accessories.',
         fashion: 'Explore the newest trends in clothing, footwear, and accessories.',
-        //homeAppliances: 'Discover the latest in kitchen gadgets, cookware, and appliances to enhance your culinary adventures.',
+        homeappliances: 'Discover the latest in kitchen gadgets, cookware, and appliances to enhance your culinary adventures.',
         // Add more departments as needed
     };
 

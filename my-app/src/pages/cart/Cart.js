@@ -9,62 +9,26 @@ import "./Cart.css";
 const Cart = () => {
     const navigate = useNavigate();
     const taxRate = 0.075;
+    const shippingCharge = 10; // Fixed shipping charge
     const [cartData, setCartData] = useState([]);
     const { isLoggedIn } = useContext(AuthContext);
 
-
-    // Load cart data from localStorage
     useEffect(() => {
         const storedCartData = JSON.parse(localStorage.getItem('cartData')) || [];
         setCartData(storedCartData);
     }, []);
 
-    // Save cart data to localStorage
     const saveCart = (updatedCart) => {
         localStorage.setItem('cartData', JSON.stringify(updatedCart));
     };
 
-    // Calculate subtotal, tax, and grand total
     const calculateTotals = () => {
         const subtotal = cartData.reduce((acc, item) => acc + item.price * item.quantity, 0);
         const tax = subtotal * taxRate;
-        const grandTotal = subtotal + tax;
-        return { subtotal, tax, grandTotal };
+        const grandTotal = subtotal + tax + shippingCharge; // Add shipping charge
+        return { subtotal, tax, shippingCharge, grandTotal };
     };
 
-    // Render cart items
-    const renderCart = () => {
-        return cartData.map((item, index) => {
-            const total = item.price * item.quantity;
-
-            return (
-                <>
-
-                    <tr key={item.id}>
-                        <td>
-                            <img src={item.image} alt={item.name} className="img-fluid cart-product-image" /> {item.name}
-                        </td>
-                        <td className="price">${item.price.toFixed(2)}</td>
-                        <td>
-                            <input
-                                type="number"
-                                className="form-control quantity"
-                                value={item.quantity}
-                                min="1"
-                                onChange={(e) => updateQuantity(index, parseInt(e.target.value))}
-                            />
-                        </td>
-                        <td className="total">${total.toFixed(2)}</td>
-                        <td>
-                            <button className="btn btn-remove" onClick={() => removeItem(index)}>Remove</button>
-                        </td>
-                    </tr>
-                </>
-            );
-        });
-    };
-
-    // Update quantity in cart
     const updateQuantity = (index, quantity) => {
         const updatedCart = [...cartData];
         updatedCart[index].quantity = quantity;
@@ -72,23 +36,36 @@ const Cart = () => {
         saveCart(updatedCart);
     };
 
-    // Remove an item from the cart
     const removeItem = (index) => {
         const updatedCart = cartData.filter((_, i) => i !== index);
         setCartData(updatedCart);
         saveCart(updatedCart);
     };
 
-    // Handle checkout
     const handleCheckout = () => {
-        if(isLoggedIn) navigate('/payment'); // Redirect to payment page
+        if (isLoggedIn) navigate('/payment');
         else {
             const queryParams = new URLSearchParams({ redirectTo: 'cart' });
             navigate(`/login?${queryParams.toString()}`)
         }
     };
 
+    const calculateDeliveryDate = () => {
+        const today = new Date();
+        let deliveryDate = new Date(today);
+
+        let addedDays = 0;
+        while (addedDays < 7) {
+            deliveryDate.setDate(deliveryDate.getDate() + 1);
+            if (deliveryDate.getDay() !== 0 && deliveryDate.getDay() !== 6) { // Skip weekends
+                addedDays++;
+            }
+        }
+        return deliveryDate.toLocaleDateString(); // Format date as a readable string
+    };
+
     const { subtotal, tax, grandTotal } = calculateTotals();
+    const estimatedDeliveryDate = calculateDeliveryDate(); // Calculate the delivery date
 
     return (
         <>
@@ -109,27 +86,49 @@ const Cart = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {renderCart()}
+                                    {cartData.map((item, index) => {
+                                        const total = item.price * item.quantity;
+                                        return (
+                                            <tr key={item.id}>
+                                                <td>
+                                                    <img src={item.image} alt={item.name} className="img-fluid cart-product-image" /> {item.name}
+                                                </td>
+                                                <td className="price">${item.price.toFixed(2)}</td>
+                                                <td>
+                                                    <input
+                                                        type="number"
+                                                        className="form-control quantity"
+                                                        value={item.quantity}
+                                                        min="1"
+                                                        onChange={(e) => updateQuantity(index, parseInt(e.target.value))}
+                                                    />
+                                                </td>
+                                                <td className="total">${total.toFixed(2)}</td>
+                                                <td>
+                                                    <button className="btn btn-remove" onClick={() => removeItem(index)}>Remove</button>
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
                                 </tbody>
                             </table>
 
-                            {/* Cart Summary */}
                             <div className="cart-summary">
                                 <h5>Cart Summary</h5>
                                 <p><strong>Subtotal:</strong> <span id="subtotal">${subtotal.toFixed(2)}</span></p>
                                 <p><strong>Tax (7.5%):</strong> <span id="tax">${tax.toFixed(2)}</span></p>
+                                <p><strong>Shipping:</strong> <span id="shipping">${shippingCharge.toFixed(2)}</span></p>
                                 <p><strong>Total:</strong> <span id="grand-total">${grandTotal.toFixed(2)}</span></p>
 
-                                {/* Button Group for Checkout and Keep Shopping */}
+                                <p><strong>Estimated Delivery:</strong> <span id="delivery-date">{estimatedDeliveryDate}</span></p> {/* Add this line */}
+
                                 <Link to="/" className="btn btn-success btn-lg">Keep Shopping</Link>
                                 <button className="btn btn-success btn-lg ml-2" onClick={handleCheckout}>Proceed to Checkout</button>
                             </div>
                         </>
                         : <div>No items in your cart, keep shopping</div>
                 }
-
             </div>
-
             <Footer />
         </>
     );

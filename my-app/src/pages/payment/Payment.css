@@ -84,3 +84,22 @@
     column-gap: 20px;
 }
   
+
+.payment-badges {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+.payment-badge {
+  max-width: 350px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+
+.payment-badge:hover {
+  transform: scale(1.1);
+}

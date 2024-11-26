@@ -1,31 +1,36 @@
 .cart-product-image {
-    height: 100px;
-    object-fit: cover;
-  }
-  .cart-summary {
-    margin-top: 20px;
-    text-align: right;
-  }
-  .cart-summary h5 {
-    font-weight: bold;
-  }
-  .btn-remove {
-    color: white;
-    background-color: red;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  table td, table th {
-    vertical-align: middle;
-  }
-  .cart-summary p {
-    margin: 0;
-    font-size: 18px;
-  }
-  .cart-summary strong {
-    font-size: 20px;
-  }
-  .cart-summary button {
-    font-size: 18px;
-  }
+  height: 100px;
+  object-fit: cover;
+}
+.cart-summary {
+  margin-top: 20px;
+  text-align: right;
+}
+.cart-summary h5 {
+  font-weight: bold;
+}
+.btn-remove {
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+table td, table th {
+  vertical-align: middle;
+}
+.cart-summary p {
+  margin: 0;
+  font-size: 18px;
+}
+.cart-summary strong {
+  font-size: 20px;
+}
+.cart-summary button {
+  font-size: 18px;
+}
+
+.price {
+  text-decoration: none; /* This is what causes the strikethrough */
+  color: gray;
+}

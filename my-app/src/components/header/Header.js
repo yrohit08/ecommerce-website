@@ -24,7 +24,10 @@ const Header = () => {
         <>
             <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container header-container">
-                    <span><Link to="/" className="navbar-brand">E-Cart</Link></span>
+                    {/* Logo */}
+                    <Link to="/" className="navbar-brand">
+                        <img src="https://r74.cooltext.com/d.php?renderid=470695806631891&extension=png" alt="E-Cart Logo" className="logo" />
+                    </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

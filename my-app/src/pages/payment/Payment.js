@@ -201,9 +201,15 @@ const Payment = () => {
 
     return false;
   };
+  const generateRandomTrackingNumber = () => {
+    // Generates a random tracking number with a combination of letters and numbers
+    const randomNumber = Math.floor(Math.random() * 1000000000); // 9-digit number
+    return `#${randomNumber.toString().padStart(9, '0')}`;
+  };
 
   return (
     <>
+    
       <Header />
       <div className="payment-page">
         <div className="container">
@@ -222,6 +228,7 @@ const Payment = () => {
                   </div>
                   <div>
                     <h3>Order placed successfully</h3>
+                    <h3>Your Tracking Number is : {generateRandomTrackingNumber()}</h3>
                     <Link to="/">Continue Shopping</Link>
                   </div>
                 </div>
@@ -363,7 +370,14 @@ const Payment = () => {
                       <p>{storeAddress}</p>
                     </div>
                   )}
-
+{/* Payment Badges */}
+<div className="payment-badges mt-3">
+                    <img
+                      src="https://www.pngitem.com/pimgs/m/19-197703_transparent-secure-checkout-png-best-trust-badges-for.png"
+                      alt="Visa"
+                      className="payment-badge"
+                    />
+                  </div>
                   <button
                     className="pay-button"
                     onClick={handlePay}
